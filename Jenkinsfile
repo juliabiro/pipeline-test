@@ -1,3 +1,6 @@
 node("xenial-base-python"){
-echo "alma"
+    stage("test"){
+    echo "alma"
+    }
 }
+
