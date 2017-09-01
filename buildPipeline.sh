@@ -2,7 +2,7 @@
 set -euo pipefail
 
 apikey=`cat .apikey`
-pipeline=`cat Jenkinsfile|tr -d "\n"|sed 's/\"/\\\"/g'`
+pipeline=`cat Jenkinsfile|sed -e 's/\([^\{\}]\)$/\1;/'|tr -d "\n"|sed 's/\"/\\\"/g'`
 master_url="infrastructure.ci.prezi.com"
 
 jobname="Jenkinsfile-tester"
