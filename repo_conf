@@ -1,0 +1,5 @@
+repo_url=https://github.com/juliabiro/pipeline-test
+repo_creds_name=jenkins-github
+apikey_file=.apikey
+master_url=infrastructure.ci.prezi.com
+jobname=Jenkinsfile-tester
