@@ -9,7 +9,7 @@ Jenkinsfiles is awesome, because you can store your jenkins job as code, togethe
 
 (Or, if you are adventurous, you can try [running a jenkins master locally and run pipeline there](https://event.crowdcompass.com/jenkinsworld2017/activity/RkAzPhl5FD), but for me that has a bad smell.)
 
-The bottleneck here seems to be the running of the job. Could you run it without committing it or editing it online? With this little script, you can. The buildPipeline.sh here looks for a Jenkinsfile next to it, and sends request to the jenkins master to run it as is. 
+The bottleneck here seems to be the running of the job. Could you run it without committing it or editing it online? With this little script, you can. The buildPipeline.sh here sends a request to the jenkins master to run the contents of a file (by default the Jenkinsfile) as pipeline code. 
 
 ### yes but which repo? 
 
@@ -25,6 +25,6 @@ A Jenkinsfile is considered something as being closely tied to your code (and th
 ## usage
 
 Run 
-```$./buildPipeline.sh```
+```$./buildPipeline.sh [path_to_file]```
 
  
