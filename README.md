@@ -9,13 +9,13 @@ Jenkinsfiles is awesome, because you can store your jenkins job as code, togethe
 
 (Or, if you are adventurous, you can try [running a jenkins master locally and run pipeline there](https://event.crowdcompass.com/jenkinsworld2017/activity/RkAzPhl5FD), but for me that has a bad smell.)
 
-The bottleneck here seems to be the running of the job. Could you run it without committing it or editing it online? With this little script, you can. The buildPipeline.sh here loos for a Jenkinsfile next to it, and sends request to the jenkins master to run it as is. 
+The bottleneck here seems to be the running of the job. Could you run it without committing it or editing it online? With this little script, you can. The buildPipeline.sh here looks for a Jenkinsfile next to it, and sends request to the jenkins master to run it as is. 
 
 ### yes but which repo? 
 
 Right now, scm steps are only allowed in job types that has an SCM repo associated with them (multibranch pipeline jobs or Jenkinsfile from SCM jobs), we need a jenkins job of that type. There is a setup script that sets it up on a master, or you can set it up for yourself. 
 
-A Jenkinsfile is considered something as being closely tied to your code (and therefore only developed with it), but actually in many cases it may not be true. There can be usecases where the Pipeline script is relatively unrelated from the actual SCM repo, and it is rather just a parameter for it (eg if your services are created from a template, and they could all use the same Jenkinsfile). The information about the SCM repo is actually in the jenkins job, not in the Jenkinsfile. So why not develop the Jenkinsfile in normal iterations, where the repo may or may not be important? It could be just a parameter? TODO: open issue about it. 
+A Jenkinsfile is considered something as being closely tied to your code (and therefore only developed with it), but actually in many cases it may not be true. There can be usecases where the Pipeline script is relatively unrelated from the actual SCM repo, and it is rather just a parameter for it (eg if your services are created from a template, and they could all use the same Jenkinsfile). The information about the SCM repo is actually in the jenkins job, not in the Jenkinsfile. So why not develop the Jenkinsfile in normal iterations, where the repo may or may not be important? It could be just a parameter? [Jira issue](https://issues.jenkins-ci.org/browse/JENKINS-46604?filter=-6)
 
 ## setup
 
